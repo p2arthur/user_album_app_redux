@@ -1,9 +1,11 @@
+import "./assets/index.css";
+
 import React from "react";
-import ReactDOM from "react-dom/client";
+import { createRoot } from "react-dom/client";
 import App from "./app";
 
 const rootElement = document.querySelector("#root");
 
-const root = ReactDOM.createRoot(rootElement);
+const root = createRoot(rootElement);
 
 root.render(<App />);

@@ -1,8 +1,11 @@
-function App (){
+import UsersList from "./components/UsersList";
 
-
-return <div>App</div>
-
+function App() {
+  return (
+    <div className="container mx-auto">
+      <UsersList />
+    </div>
+  );
 }
 
 export default App;

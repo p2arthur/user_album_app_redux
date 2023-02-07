@@ -5,9 +5,17 @@ import axios from "axios";
 const fetchUsers = createAsyncThunk("users/fetch", async () => {
   const response = await axios.get("http://localhost:3005/users");
 
+  //DEV ONLY!! - Calling the pause helper to give time for our loading proccess
+  await pause(5000);
+
   //This return will be automatically assigned as a payload when the thunk gets dispatched
   return response.data;
 });
+
+//DEV ONLY!!! - Helper function to pause the fetching for testing purposes
+const pause = (duration) => {
+  return new Promise((resolve) => setTimeout(resolve, duration));
+};
 
 /*Automatic types: 
 fetchUser.pending === 'users/fetch/pending'

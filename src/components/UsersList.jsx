@@ -18,7 +18,7 @@ function UsersList() {
   //Testing if the state from ou selector is working
   //Is the data being fetched?
   if (isLoading) {
-    return <Skeleton times={5} />;
+    return <Skeleton times={5} className="h-10 w-full" />;
   }
 
   //Has the data failed to fetch?

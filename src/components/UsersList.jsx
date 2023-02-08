@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchUsers } from "../store";
+import Skeleton from "./Skeleton";
 
 function UsersList() {
   //dispatch to dispatch action from our async thunk
@@ -17,7 +18,7 @@ function UsersList() {
   //Testing if the state from ou selector is working
   //Is the data being fetched?
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Skeleton times={5} />;
   }
 
   //Has the data failed to fetch?

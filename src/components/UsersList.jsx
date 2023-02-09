@@ -18,7 +18,7 @@ function UsersList() {
   //Testing if the state from ou selector is working
   //Is the data being fetched?
   if (isLoading) {
-    return <Skeleton times={5} className="h-10 w-full" />;
+    return <Skeleton times={100} className="h-10 w-full" />;
   }
 
   //Has the data failed to fetch?
@@ -26,8 +26,17 @@ function UsersList() {
     return <div>Error loading data...</div>;
   }
 
+  //Rendering each user
+  const renderedUsers = data.map((user) => (
+    <div key={user.id} className="mb-2 border rounded">
+      <div className="flex p-2 justify-between items-center cursor-pointer">
+        {user.name}
+      </div>
+    </div>
+  ));
+
   //Has the data been fetched succesfully?
-  return <div>{data.length} users loaded</div>;
+  return <div>{renderedUsers}</div>;
 }
 
 export default UsersList;

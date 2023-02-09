@@ -1,5 +1,82 @@
 {
-"users": [{ "id":1,"name":"Arthur" }],
-"albums":[],
-"photos":[]
+  "users": [
+    {
+      "id": 1,
+      "name": "Arthur"
+    },
+    {
+      "name": "Penny Leuschke",
+      "id": 2
+    },
+    {
+      "name": "Winifred Will",
+      "id": 3
+    },
+    {
+      "name": "Keith King",
+      "id": 4
+    },
+    {
+      "name": "Darin Turner",
+      "id": 5
+    },
+    {
+      "name": "Jamie Shanahan",
+      "id": 6
+    },
+    {
+      "name": "Mildred Vandervort",
+      "id": 7
+    },
+    {
+      "name": "Cora Homenick",
+      "id": 8
+    },
+    {
+      "name": "Nathan Miller",
+      "id": 9
+    },
+    {
+      "name": "Janet Cronin",
+      "id": 10
+    },
+    {
+      "name": "Miss Kristi Will I",
+      "id": 11
+    },
+    {
+      "name": "Hubert Turcotte",
+      "id": 12
+    },
+    {
+      "name": "Kathy Veum",
+      "id": 13
+    },
+    {
+      "name": "Matt Auer",
+      "id": 14
+    },
+    {
+      "name": "Martha Aufderhar",
+      "id": 15
+    },
+    {
+      "name": "Fredrick Mante",
+      "id": 16
+    },
+    {
+      "name": "Stacy Bernier",
+      "id": 17
+    },
+    {
+      "name": "Joseph Kessler Jr.",
+      "id": 18
+    },
+    {
+      "name": "Laverne Keeling",
+      "id": 19
+    }
+  ],
+  "albums": [],
+  "photos": []
 }

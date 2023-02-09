@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUsers } from "../store";
+import { fetchUsers, addUser } from "../store";
+import Button from "./Button";
 import Skeleton from "./Skeleton";
 
 function UsersList() {
@@ -14,6 +15,10 @@ function UsersList() {
   useEffect(() => {
     dispatch(fetchUsers());
   }, []);
+
+  const handleUserAdd = () => {
+    dispatch(addUser());
+  };
 
   //Testing if the state from ou selector is working
   //Is the data being fetched?
@@ -36,7 +41,15 @@ function UsersList() {
   ));
 
   //Has the data been fetched succesfully?
-  return <div>{renderedUsers}</div>;
+  return (
+    <div>
+      <div className="flex flex-row justify-between m-3">
+        <h1 className="m2 text-xl">Users</h1>
+        <Button onClick={handleUserAdd}>+ Add new user</Button>
+      </div>
+      {renderedUsers}
+    </div>
+  );
 }
 
 export default UsersList;

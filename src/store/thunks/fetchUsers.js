@@ -6,7 +6,7 @@ const fetchUsers = createAsyncThunk("users/fetch", async () => {
   const response = await axios.get("http://localhost:3005/users");
 
   //DEV ONLY!! - Calling the pause helper to give time for our loading proccess
-  await pause(10000);
+  await pause(2000);
 
   //This return will be automatically assigned as a payload when the thunk gets dispatched
   return response.data;

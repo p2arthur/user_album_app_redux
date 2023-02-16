@@ -18,7 +18,7 @@ function UsersList() {
 
   //--------------------------------------------------------------------------
   //useSelector to get access to ou state.users from the store
-  const { data } = useSelector((state) => state.users); // {data: [], isLoading: false, error: null}
+  const { data } = useSelector((state) => state.users);
   //--------------------------------------------------------------------------
 
   //--------------------------------------------------------------------------
@@ -44,9 +44,6 @@ function UsersList() {
 
   //Testing if the state from ou selector is working
   //Is the data being fetched?
-  if (isLoadingUsers) {
-    return <Skeleton times={100} className="h-10 w-full" />;
-  }
 
   //Has the data failed to fetch?
   if (isLoadingUsersError) {
@@ -67,13 +64,14 @@ function UsersList() {
     <div>
       <div className="flex flex-row justify-between m-3">
         <h1 className="m2 text-xl">Users</h1>
-        {isCreatingUser ? (
-          "Creating user..."
-        ) : (
-          <Button onClick={handleUserAdd}>+ Add new user</Button>
-        )}
+
+        <Button loading={isCreatingUser} onClick={handleUserAdd}>
+          + Add new user
+        </Button>
+
         {isCreatingUserError && "Error creating user..."}
       </div>
+      {isLoadingUsers ? <Skeleton times={10} className="w-full h-10" /> : null}
       {renderedUsers}
     </div>
   );

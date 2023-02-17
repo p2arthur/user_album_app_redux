@@ -45,34 +45,38 @@ function UsersList() {
   //Testing if the state from ou selector is working
   //Is the data being fetched?
 
-  //Has the data failed to fetch?
-  if (isLoadingUsersError) {
-    return <div>Error loading data... {isLoadingUsersError.message}</div>;
-  }
+  let content;
 
-  //Rendering each user
-  const renderedUsers = data.map((user) => (
-    <div key={user.id} className="mb-2 border rounded">
-      <div className="flex p-2 justify-between items-center cursor-pointer">
-        {user.name}
+  //Conditional to check every state possible for our content
+
+  if (isLoadingUsers) {
+    content = <Skeleton times={10} className="w-full h-10" />;
+  }
+  //Has the data failed to fetch?
+  else if (isLoadingUsersError) {
+    content = <div>Error loading data... {isLoadingUsersError.message}</div>;
+  } else {
+    content = data.map((user) => (
+      <div key={user.id} className="mb-2 border rounded">
+        <div className="flex p-2 justify-between items-center cursor-pointer">
+          {user.name}
+        </div>
       </div>
-    </div>
-  ));
+    ));
+  }
 
   //Has the data been fetched succesfully?
   return (
     <div>
-      <div className="flex flex-row justify-between m-3">
+      <div className="flex flex-row justify-between m-3 items-center">
         <h1 className="m2 text-xl">Users</h1>
 
         <Button loading={isCreatingUser} onClick={handleUserAdd}>
           + Add new user
         </Button>
-
         {isCreatingUserError && "Error creating user..."}
       </div>
-      {isLoadingUsers ? <Skeleton times={10} className="w-full h-10" /> : null}
-      {renderedUsers}
+      {content}
     </div>
   );
 }

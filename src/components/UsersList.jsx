@@ -4,6 +4,7 @@ import { fetchUsers, addUser } from "../store";
 import { useThunk } from "../hooks/useThunk";
 import Button from "./Button";
 import Skeleton from "./Skeleton";
+import UserListItem from "./UserListItem";
 
 function UsersList() {
   //Creating a component level state to handle fine-grain loading
@@ -56,13 +57,7 @@ function UsersList() {
   else if (isLoadingUsersError) {
     content = <div>Error loading data... {isLoadingUsersError.message}</div>;
   } else {
-    content = data.map((user) => (
-      <div key={user.id} className="mb-2 border rounded">
-        <div className="flex p-2 justify-between items-center cursor-pointer">
-          {user.name}
-        </div>
-      </div>
-    ));
+    content = data.map((user) => <UserListItem key={user.id} user={user} />);
   }
 
   //Has the data been fetched succesfully?

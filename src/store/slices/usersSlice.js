@@ -60,12 +60,13 @@ const usersSlice = createSlice({
       state.error = null;
       //BUG
       console.log(action);
-      state.data.filter((user) => user.id !== action.payload);
+      state.data = state.data.filter((user) => user.id !== action.payload.id);
     });
 
     builder.addCase(deleteUser.rejected, (state, action) => {
       state.isLoading = false;
       state.error = action.error;
+      console.log(action);
     });
     //--------------------------------------------------------------------------
   },

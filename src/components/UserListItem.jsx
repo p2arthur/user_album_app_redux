@@ -1,7 +1,8 @@
-import { GoTrashcan } from "react-icons/go";
+import { GoTrashcan, GoChevronDown } from "react-icons/go";
 import { deleteUser } from "../store";
 import { useThunk } from "../hooks/useThunk";
 import Button from "./Button";
+import ExpandablePanel from "./ExpandablePanel";
 
 function UserListItem({ user }) {
   const [doDeleteUser, isLoading, error] = useThunk(deleteUser);
@@ -11,20 +12,24 @@ function UserListItem({ user }) {
     console.log(user.id);
   };
 
-  return (
-    <div className="mb-2 border rounded flex items-center p-3">
-      <Button
-        loading={isLoading}
-        onClick={handleDeleteUser}
-        className="rounded-full bg-red-500"
-      >
-        <GoTrashcan className="text-white" />
-      </Button>
-      <div className="flex p-2 justify-between items-center cursor-pointer">
-        {user.name}
+  const header = (
+    <>
+      <div className="flex items-center">
+        <Button
+          loading={isLoading}
+          onClick={handleDeleteUser}
+          className="rounded-full bg-red-500"
+        >
+          <GoTrashcan className="text-white" />
+        </Button>
+        <div className="flex p-2 justify-between items-center cursor-pointer">
+          {user.name}
+        </div>
       </div>
-    </div>
+    </>
   );
+
+  return <ExpandablePanel header={header}>CONTENT</ExpandablePanel>;
 }
 
 export default UserListItem;

@@ -13,6 +13,6 @@
       "id": 5
     }
   ],
-  "albums": [],
+  "albums": [{"id":10, "title":"hiking trip", "userId":1}],
   "photos": []
 }

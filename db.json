@@ -13,6 +13,42 @@
       "id": 5
     }
   ],
-  "albums": [{"id":10, "title":"hiking trip", "userId":1}, {"id":10, "title":"hiking trip", "userId":1}, {"id":10, "title":"hiking trip", "userId":1}],
+  "albums": [
+    {
+      "id": 10,
+      "title": "hiking trip",
+      "user_id": 1
+    },
+    {
+      "id": 10,
+      "title": "hiking trip",
+      "user_id": 1
+    },
+    {
+      "id": 10,
+      "title": "hiking trip",
+      "user_id": 1
+    },
+    {
+      "title": "Electronic Soft Chicken",
+      "user_id": 1,
+      "id": 11
+    },
+    {
+      "title": "Licensed Granite Pants",
+      "user_id": 4,
+      "id": 12
+    },
+    {
+      "title": "Electronic Wooden Bacon",
+      "user_id": 1,
+      "id": 13
+    },
+    {
+      "title": "Recycled Steel Mouse",
+      "user_id": 4,
+      "id": 14
+    }
+  ],
   "photos": []
 }

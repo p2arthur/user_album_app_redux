@@ -1,12 +1,16 @@
-import { useFetchAlbumsQuery } from "../store";
+import { useFetchAlbumsQuery, useAddAlbumMutation } from "../store";
 import Skeleton from "./Skeleton";
 import ExpandablePanel from "./ExpandablePanel";
 import Button from "./Button";
+import { faker } from "@faker-js/faker";
 
 function AlbumsList({ user }) {
   const { data, error, isLoading } = useFetchAlbumsQuery(user);
+  const [addAlbum, result] = useAddAlbumMutation();
 
-  console.log(data);
+  const handleAddAlbum = () => {
+    addAlbum({ title: faker.commerce.productName(), userId: user.id });
+  };
 
   let content;
 
@@ -27,7 +31,10 @@ function AlbumsList({ user }) {
 
   return (
     <div>
-      <div>Albums by: {user.name}</div>
+      <div className="flex justify-between mb-5 items-center">
+        Albums by: {user.name}
+        <Button onClick={handleAddAlbum}>+ Add new album</Button>
+      </div>
       <div>{content}</div>
     </div>
   );

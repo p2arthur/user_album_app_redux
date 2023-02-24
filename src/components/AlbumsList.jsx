@@ -22,7 +22,7 @@ function AlbumsList({ user }) {
     content = data.map((album) => {
       const header = <div>{album.title}</div>;
       return (
-        <ExpandablePanel header={header}>
+        <ExpandablePanel key={album.id} header={header}>
           <div>Photo</div>
         </ExpandablePanel>
       );
@@ -32,8 +32,10 @@ function AlbumsList({ user }) {
   return (
     <div>
       <div className="flex justify-between mb-5 items-center">
-        Albums by: {user.name}
-        <Button onClick={handleAddAlbum}>+ Add new album</Button>
+        <h3 className="text-lg font-bold"> Albums by: {user.name}</h3>
+        <Button loading={result.isLoading} onClick={handleAddAlbum}>
+          + Add new album
+        </Button>
       </div>
       <div>{content}</div>
     </div>

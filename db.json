@@ -15,21 +15,6 @@
   ],
   "albums": [
     {
-      "id": 10,
-      "title": "hiking trip",
-      "user_id": 1
-    },
-    {
-      "id": 10,
-      "title": "hiking trip",
-      "user_id": 1
-    },
-    {
-      "id": 10,
-      "title": "hiking trip",
-      "user_id": 1
-    },
-    {
       "title": "Electronic Soft Chicken",
       "user_id": 1,
       "id": 11
@@ -48,6 +33,51 @@
       "title": "Recycled Steel Mouse",
       "user_id": 4,
       "id": 14
+    },
+    {
+      "title": "Refined Granite Pizza",
+      "user_id": 1,
+      "id": 15
+    },
+    {
+      "title": "Handcrafted Bronze Shoes",
+      "user_id": 1,
+      "id": 16
+    },
+    {
+      "title": "Handcrafted Rubber Towels",
+      "user_id": 1,
+      "id": 17
+    },
+    {
+      "title": "Recycled Steel Car",
+      "user_id": 1,
+      "id": 18
+    },
+    {
+      "title": "Intelligent Soft Sausages",
+      "user_id": 1,
+      "id": 19
+    },
+    {
+      "title": "Luxurious Bronze Shirt",
+      "user_id": 1,
+      "id": 20
+    },
+    {
+      "title": "Awesome Bronze Chair",
+      "user_id": 1,
+      "id": 21
+    },
+    {
+      "title": "Unbranded Rubber Pizza",
+      "user_id": 1,
+      "id": 22
+    },
+    {
+      "title": "Incredible Concrete Chips",
+      "user_id": 1,
+      "id": 23
     }
   ],
   "photos": []

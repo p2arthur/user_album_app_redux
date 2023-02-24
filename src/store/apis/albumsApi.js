@@ -1,5 +1,9 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+//DEV ONLY!--REMOVE FOR PRODUCTION
+const pause = (duration) =>
+  new Promise((resolve) => setTimeout(resolve, duration));
+
 //Creating an API using RTK Query for things related to albums - createApi({options})
 const albumsApi = createApi({
   //Key for our 'store'
@@ -8,13 +12,21 @@ const albumsApi = createApi({
   //Configuration property that in this case uses a pre created function called fetchBaseQuery
   baseQuery: fetchBaseQuery({
     baseUrl: "http://localhost:3005",
+
+    //DEV ONLY!--REMOVE FOR PRODUCTION
+    fetchFn: async (...args) => {
+      await pause(3000);
+      return fetch(...args);
+    },
   }),
 
   //Configuring the endpoints to our requests
   endpoints(builder) {
     return {
       fetchAlbums: builder.query({
-        providesTags: ["Album"],
+        providesTags: (result, error, user) => [
+          { type: "album", id: user.userId },
+        ],
         query: (user) => {
           return {
             url: "/albums",
@@ -27,7 +39,9 @@ const albumsApi = createApi({
       }),
 
       addAlbum: builder.mutation({
-        invalidatesTags: ["Album"],
+        invalidatesTags: (result, error, user) => [
+          { type: "Album", id: user.userId },
+        ],
         query: (album) => {
           return {
             url: "/albums",

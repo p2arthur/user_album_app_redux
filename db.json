@@ -1,16 +1,24 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Arthur"
-    },
-    {
       "name": "Eunice Nienow",
       "id": 4
     },
     {
       "name": "Patricia Purdy IV",
       "id": 5
+    },
+    {
+      "name": "Mona Hagenes",
+      "id": 6
+    },
+    {
+      "name": "Emanuel Wintheiser",
+      "id": 7
+    },
+    {
+      "name": "Mattie Mayer",
+      "id": 8
     }
   ],
   "albums": [
@@ -20,19 +28,9 @@
       "id": 11
     },
     {
-      "title": "Licensed Granite Pants",
-      "user_id": 4,
-      "id": 12
-    },
-    {
       "title": "Electronic Wooden Bacon",
       "user_id": 1,
       "id": 13
-    },
-    {
-      "title": "Recycled Steel Mouse",
-      "user_id": 4,
-      "id": 14
     },
     {
       "title": "Refined Granite Pizza",
@@ -78,6 +76,26 @@
       "title": "Incredible Concrete Chips",
       "user_id": 1,
       "id": 23
+    },
+    {
+      "title": "Fantastic Concrete Pizza",
+      "user_id": 4,
+      "id": 24
+    },
+    {
+      "title": "Intelligent Granite Sausages",
+      "user_id": 5,
+      "id": 25
+    },
+    {
+      "title": "Fantastic Frozen Towels",
+      "user_id": 4,
+      "id": 26
+    },
+    {
+      "title": "Modern Frozen Fish",
+      "user_id": 6,
+      "id": 27
     }
   ],
   "photos": []
